@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { Button, TextField } from '@tact/ui';
 	import { store, notes, isLoaded } from '$lib/store';
 	import { getWordCount, formatWordCount } from '$lib/utils';
@@ -31,7 +32,7 @@
 		const foundNote = $notes.find(n => n.id === noteId);
 		
 		if (!foundNote) {
-			goto('/');
+			goto(`${base}/`);
 			return;
 		}
 		
@@ -154,7 +155,7 @@
 		
 		if (confirm(`Are you sure you want to delete "${note.title}"?`)) {
 			await store.deleteNote(note.id);
-			goto('/');
+			goto(`${base}/`);
 		}
 	}
 
@@ -210,7 +211,7 @@
 				<div class="flex flex-col gap-3 sm:hidden">
 					<!-- Top row: Back button and action buttons -->
 					<div class="flex items-center justify-between">
-						<Button onclick={() => goto('/')} variant="ghost" size="sm">
+						<Button onclick={() => goto(`${base}/`)} variant="ghost" size="sm">
 							{#snippet children()}← Back{/snippet}
 						</Button>
 						
@@ -284,7 +285,7 @@
 				<!-- Desktop Layout -->
 				<div class="hidden sm:flex items-center justify-between">
 					<div class="flex items-center gap-4 min-w-0 flex-1">
-						<Button onclick={() => goto('/')} variant="ghost" size="sm">
+						<Button onclick={() => goto(`${base}/`)} variant="ghost" size="sm">
 							{#snippet children()}← Back{/snippet}
 						</Button>
 						

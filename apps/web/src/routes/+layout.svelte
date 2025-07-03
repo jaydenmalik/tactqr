@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 	import { getTheme, setTheme, type Theme, getAllThemes } from '@tact/design';
 	import { store, isLoaded, selectedTags, filterMode, searchTerm, tagSearchTerm, filteredTags, gridColumns, cardHeight, sortMode } from '$lib/store';
 	import { Button } from '@tact/ui';
@@ -213,7 +214,7 @@
 					<!-- Left side - Logo/Brand -->
 					<div class="flex items-center space-x-4">
 						<div class="flex items-center gap-2">
-							<a href="/" class="text-2xl font-bold text-foreground hover:text-primary transition-colors">
+							<a href="{base}/" class="text-2xl font-bold text-foreground hover:text-primary transition-colors">
 								Tact
 							</a>
 							<div class="spinning-key"></div>
@@ -247,11 +248,11 @@
 						</button>
 
 						<!-- Print Button -->
-						<a href="/print" class="text-xl hover:opacity-70 transition-opacity" title="Print QR Codes">
+						<a href="{base}/print" class="text-xl hover:opacity-70 transition-opacity" title="Print QR Codes">
 							🖨️
 						</a>
 						
-						<a href="/notes/new" class="text-xl hover:opacity-70 transition-opacity" title="Add Note">
+						<a href="{base}/notes/new" class="text-xl hover:opacity-70 transition-opacity" title="Add Note">
 							➕
 						</a>
 					</div>

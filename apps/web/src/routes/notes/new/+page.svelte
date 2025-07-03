@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { Button, TextField } from '@tact/ui';
 	import { store } from '$lib/store';
 	import { getOrCreateLocalUser } from '@tact/data';
@@ -51,7 +52,7 @@
 			});
 
 			// Navigate to the new note
-			goto(`/notes/${newNote.id}`);
+			goto(`${base}/notes/${newNote.id}`);
 		} catch (error) {
 			console.error('Error creating note:', error);
 			errors.general = 'Failed to create note.';
@@ -61,7 +62,7 @@
 	}
 
 	function handleCancel() {
-		goto('/');
+		goto(`${base}/`);
 	}
 
 	onMount(async () => {

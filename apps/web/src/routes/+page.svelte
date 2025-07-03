@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { base } from '$app/paths';
 	import { Button, Card } from '@tact/ui';
 	import { store, notes, selectedTags, filterMode, searchTerm, tagSearchTerm, filteredNotes, gridColumns } from '$lib/store';
 	import { getOrCreateLocalUser } from '@tact/data';
@@ -25,11 +26,11 @@
 	}
 
 	function handleNoteClick(note: Note) {
-		goto(`/notes/${note.id}`);
+		goto(`${base}/notes/${note.id}`);
 	}
 
 	function handleNewNote() {
-		goto('/notes/new');
+		goto(`${base}/notes/new`);
 	}
 
 	function formatDate(date: Date) {

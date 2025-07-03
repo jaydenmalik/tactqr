@@ -4,6 +4,7 @@
   import { getOrCreateLocalUser, exportUserBackup, estimateExportSize, importUserData, mergeImportedData } from '@tact/data';
   import type { User } from '@tact/core';
   import { goto } from '$app/navigation';
+  import { base } from '$app/paths';
   import QrScanner from '$lib/components/QrScanner.svelte';
   
   interface Props {
