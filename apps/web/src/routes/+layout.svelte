@@ -190,6 +190,19 @@
 	}
 
 	onMount(async () => {
+		// Handle GitHub Pages 404 redirect
+		const redirect = sessionStorage.redirect;
+		if (redirect) {
+			delete sessionStorage.redirect;
+			const url = new URL(redirect);
+			const path = url.pathname.replace('/tactqr', '');
+			if (path && path !== '/') {
+				const { goto } = await import('$app/navigation');
+				goto(`${base}${path}`);
+				return;
+			}
+		}
+		
 		store.loadAllData();
 		user = await getOrCreateLocalUser();
 		
