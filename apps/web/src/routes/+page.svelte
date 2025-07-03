@@ -122,8 +122,8 @@
 						<!-- Note Header -->
 						<div class="space-y-3 flex-1">
 							<div class="flex items-start justify-between">
-								<div class="flex items-center gap-2 min-w-0 flex-1">
-									<span class="text-2xl flex-shrink-0">{note.emoji}</span>
+								<div class="flex items-start gap-2 min-w-0 flex-1">
+									<span class="text-2xl flex-shrink-0 mt-0.5">{note.emoji}</span>
 									<h3 class="font-medium text-lg leading-tight break-words min-w-0 flex-1">{note.title}</h3>
 								</div>
 								<Button 

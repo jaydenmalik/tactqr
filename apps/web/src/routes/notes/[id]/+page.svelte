@@ -393,7 +393,7 @@
 				</div>
 			{:else}
 				<article class="max-w-none">
-					<div class="whitespace-pre-wrap text-base leading-relaxed text-foreground break-words overflow-wrap-anywhere">{note.content}</div>
+					<div class="note-content whitespace-pre-wrap text-base leading-relaxed text-foreground">{note.content}</div>
 				</article>
 
 
@@ -428,5 +428,15 @@
 	@keyframes spin {
 		0% { transform: rotate(0deg); }
 		100% { transform: rotate(360deg); }
+	}
+
+	.note-content {
+		word-wrap: break-word;
+	}
+
+	@media (max-width: 640px) {
+		.note-content {
+			word-break: break-word;
+		}
 	}
 </style> 
