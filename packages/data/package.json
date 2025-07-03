@@ -1,0 +1,30 @@
+{
+  "name": "@tact/data",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./client": "./src/client.ts",
+    "./repos/*": "./src/repos/*.ts",
+    "./export": "./src/export.ts",
+    "./crypto": "./src/crypto.ts"
+  },
+  "scripts": {
+    "test": "vitest",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@tact/core": "workspace:*",
+    "qrcode": "^1.5.3",
+    "qr-scanner": "^1.4.2",
+    "pako": "^2.1.0"
+  },
+  "devDependencies": {
+    "vitest": "^1.0.0",
+    "typescript": "^5.0.0",
+    "@types/qrcode": "^1.5.5",
+    "@types/pako": "^2.0.3"
+  }
+} 

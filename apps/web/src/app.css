@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Font Import */
+@font-face {
+  font-family: 'Encode Sans SC';
+  src: url('/fonts/EncodeSansSC-VariableFont_wdth,wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-stretch: 75% 200%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+
+  /* Light Theme (Rich Color Depth) */
+  .light {
+    --background: 210 20% 96%;
+    --foreground: 215 25% 15%;
+    --card: 210 25% 98%;
+    --card-foreground: 215 25% 15%;
+    --primary: 217 91% 55%;
+    --primary-foreground: 210 20% 96%;
+    --secondary: 210 35% 88%;
+    --secondary-foreground: 215 25% 20%;
+    --muted: 210 30% 91%;
+    --muted-foreground: 215 20% 35%;
+    --accent: 210 40% 85%;
+    --accent-foreground: 215 25% 20%;
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 210 20% 96%;
+    --success: 142 70% 40%;
+    --success-foreground: 210 20% 96%;
+    --warning: 45 90% 55%;
+    --warning-foreground: 215 25% 15%;
+    --border: 214 30% 82%;
+    --input: 214 25% 85%;
+    --ring: 217 91% 55%;
+  }
+
+  /* Dark Mode (Linux Desktop Style) */
+  .dark {
+    --background: 220 8% 14%;
+    --foreground: 220 15% 88%;
+    --card: 220 10% 18%;
+    --card-foreground: 220 15% 88%;
+    --primary: 211 100% 70%;
+    --primary-foreground: 220 8% 14%;
+    --secondary: 220 8% 22%;
+    --secondary-foreground: 220 10% 65%;
+    --muted: 220 8% 20%;
+    --muted-foreground: 220 10% 58%;
+    --accent: 220 10% 25%;
+    --accent-foreground: 220 15% 88%;
+    --destructive: 0 72% 65%;
+    --destructive-foreground: 220 8% 14%;
+    --success: 158 60% 65%;
+    --success-foreground: 220 8% 14%;
+    --warning: 48 85% 70%;
+    --warning-foreground: 220 8% 14%;
+    --border: 220 8% 25%;
+    --input: 220 8% 18%;
+    --ring: 211 100% 70%;
+  }
+
+  /* High Contrast Theme (Maximum Readability) */
+  .high-contrast {
+    --background: 0 0% 0%;
+    --foreground: 120 100% 75%;
+    --card: 0 0% 5%;
+    --card-foreground: 120 100% 75%;
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 8%;
+    --secondary-foreground: 120 100% 75%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 120 100% 60%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 120 100% 75%;
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 0%;
+    --success: 120 100% 50%;
+    --success-foreground: 0 0% 0%;
+    --warning: 60 100% 50%;
+    --warning-foreground: 0 0% 0%;
+    --border: 0 0% 15%;
+    --input: 0 0% 10%;
+    --ring: 120 100% 50%;
+  }
+
+  /* Legacy dark theme for backward compatibility */
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --success: 142.1 70.6% 45.3%;
+    --success-foreground: 144.9 80.4% 10%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Encode Sans SC', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  .spinner {
+    @apply animate-spin rounded-full border-2 border-muted border-t-primary;
+  }
+
+  /* High contrast theme specific styles */
+  .high-contrast .spinner {
+    @apply border-green-500/20 border-t-green-500;
+  }
+  
+  /* High contrast theme monospace font for authentic feel */
+  .high-contrast {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  }
+  
+  /* High contrast cursor effect for inputs */
+  .high-contrast input:focus,
+  .high-contrast textarea:focus {
+    box-shadow: 0 0 10px hsl(120 100% 50% / 0.3);
+  }
+
+  /* Custom range slider styling */
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  input[type="range"]::-webkit-slider-track {
+    background: hsl(var(--muted));
+    height: 4px;
+    border-radius: 2px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background: hsl(var(--primary));
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin-top: -4px;
+  }
+
+  input[type="range"]::-moz-range-track {
+    background: hsl(var(--muted));
+    height: 4px;
+    border-radius: 2px;
+    border: none;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    background: hsl(var(--primary));
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* Spinning key animation */
+  .spinning-key {
+    width: 32px;
+    height: 32px;
+    background-image: url('/key_32x32_24f.png');
+    background-size: 768px 32px; /* 24 frames * 32px width = 768px total width */
+    background-repeat: no-repeat;
+    animation: spin-key 1.2s steps(24) infinite reverse;
+  }
+
+  @keyframes spin-key {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -768px 0; /* Move through all 24 frames */
+    }
+  }
+} 

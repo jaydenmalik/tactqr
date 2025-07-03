@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "strict": true,
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": true,
+    "baseUrl": ".",
+    "paths": {
+      "@tact/core": ["./packages/core/src"],
+      "@tact/core/*": ["./packages/core/src/*"],
+      "@tact/data": ["./packages/data/src"],
+      "@tact/data/*": ["./packages/data/src/*"],
+      "@tact/ui": ["./packages/ui/src"],
+      "@tact/ui/*": ["./packages/ui/src/*"],
+      "@tact/design": ["./packages/design/src"],
+      "@tact/design/*": ["./packages/design/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "build"]
+} 
