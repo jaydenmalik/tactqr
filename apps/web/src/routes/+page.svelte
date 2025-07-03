@@ -124,7 +124,7 @@
 							<div class="flex items-start justify-between">
 								<div class="flex items-center gap-2 min-w-0 flex-1">
 									<span class="text-2xl flex-shrink-0">{note.emoji}</span>
-									<h3 class="font-medium text-lg leading-tight truncate">{note.title}</h3>
+									<h3 class="font-medium text-lg leading-tight break-words min-w-0 flex-1">{note.title}</h3>
 								</div>
 								<Button 
 									onclick={(e) => handleDeleteNote(note, e)}
@@ -138,7 +138,7 @@
 
 							<!-- Note Content Preview -->
 							<div class="flex-1 overflow-hidden">
-								<p class="text-muted-foreground text-sm leading-relaxed overflow-hidden">
+								<p class="text-muted-foreground text-sm leading-relaxed overflow-hidden break-words">
 									{truncateContent(note.content, 40)}
 								</p>
 							</div>

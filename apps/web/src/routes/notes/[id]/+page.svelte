@@ -377,8 +377,8 @@
 							bind:value={editContent}
 							oninput={handleContentInput}
 							placeholder="Write your note content here..."
-							class="w-full min-h-96 px-4 py-3 border rounded-lg bg-background resize-y text-base leading-relaxed"
-							style="font-family: inherit;"
+							class="w-full min-h-96 px-4 py-3 border rounded-lg bg-background resize-y text-base leading-relaxed break-words"
+							style="font-family: inherit; word-wrap: break-word;"
 						></textarea>
 						{#if editErrors.content}
 							<p class="text-sm text-destructive mt-1">{editErrors.content}</p>
@@ -393,7 +393,7 @@
 				</div>
 			{:else}
 				<article class="max-w-none">
-					<div class="whitespace-pre-wrap text-base leading-relaxed text-foreground">{note.content}</div>
+					<div class="whitespace-pre-wrap text-base leading-relaxed text-foreground break-words overflow-wrap-anywhere">{note.content}</div>
 				</article>
 
 

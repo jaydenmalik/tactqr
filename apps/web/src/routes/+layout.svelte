@@ -243,10 +243,11 @@
 						<select 
 							bind:value={currentTheme}
 							onchange={(e) => handleThemeChange(e.target.value)}
-							class="px-3 py-2 rounded-full text-xs border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
+							class="px-2 py-1 rounded-full text-sm border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 w-12 text-center"
+							title="Switch theme"
 						>
 							{#each themes as { key, meta }}
-								<option value={key}>{meta.icon} {meta.name}</option>
+								<option value={key}>{meta.icon}</option>
 							{/each}
 						</select>
 
