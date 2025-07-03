@@ -172,7 +172,8 @@
 				
 				// Small delay between downloads to prevent browser issues
 				if (pageIndex < totalPages - 1) {
-					await new Promise(resolve => setTimeout(resolve, 100));
+					const downloadDelay = 100;
+					await new Promise(resolve => setTimeout(resolve, downloadDelay));
 				}
 			}
 

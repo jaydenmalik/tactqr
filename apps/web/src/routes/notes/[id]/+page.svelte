@@ -74,9 +74,10 @@
 		if (autoSaveTimer) {
 			clearTimeout(autoSaveTimer);
 		}
+		const autoSaveDelay = 1000; // Auto-save after 1 second of inactivity
 		autoSaveTimer = setTimeout(() => {
 			handleSave();
-		}, 1000); // Auto-save after 1 second of inactivity
+		}, autoSaveDelay);
 	}
 
 	function handleTitleInput() {
@@ -136,9 +137,10 @@
 			if (savedIndicatorTimer) {
 				clearTimeout(savedIndicatorTimer);
 			}
+			const savedIndicatorDelay = 2000; // Show "Saved" for 2 seconds
 			savedIndicatorTimer = setTimeout(() => {
 				showSaved = false;
-			}, 2000); // Show "Saved" for 2 seconds
+			}, savedIndicatorDelay);
 		} catch (error) {
 			console.error('Error saving note:', error);
 			editErrors.general = 'Failed to save note.';
