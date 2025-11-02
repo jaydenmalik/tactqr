@@ -231,9 +231,6 @@
 								Tact
 							</a>
 							<div class="spinning-key"></div>
-							<div class="text-xs text-muted-foreground">
-								by ajm
-							</div>
 						</div>
 					</div>
 
