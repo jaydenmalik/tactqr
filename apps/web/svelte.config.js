@@ -13,7 +13,8 @@ const config = {
 			strict: false
 		}),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/tactqr' : ''
+			base: process.env.NODE_ENV === 'production' ? '/tactqr' : '',
+			relative: false
 		},
 		alias: {
 			$lib: './src/lib',
